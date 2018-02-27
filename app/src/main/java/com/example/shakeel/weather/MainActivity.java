@@ -21,27 +21,4 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().add(R.id.container, new WeatherFragment()).commit();
         }
     }
-
-    private void showInputDialog(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-        builder.setTitle("Change City");
-
-        final EditText editText = new EditText(this);
-        editText.setInputType(InputType.TYPE_CLASS_TEXT);
-        builder.setView(editText);
-        builder.setPositiveButton("Go", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                changeCity(editText.getText().toString());
-            }
-        });
-        builder.show();
-    }
-
-    public void changeCity(String city){
-        WeatherFragment fragment = (WeatherFragment)getSupportFragmentManager().findFragmentById(R.id.container);
-        fragment.changeCity(city);
-        new CityPreference(this).setCity(city);
-    }
 }

@@ -24,10 +24,6 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-/**
- * Created by Shakeel on 25/02/2018.
- */
-
 public class WeatherFragment extends Fragment {
     Typeface weatherFont;
 
@@ -77,7 +73,6 @@ public class WeatherFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         weatherFont = ResourcesCompat.getFont(getContext(), R.font.weather);
-        updateWeatherData(new CityPreference(getActivity()).getCity());
     }
 
     private void updateWeatherData(final String city) {
