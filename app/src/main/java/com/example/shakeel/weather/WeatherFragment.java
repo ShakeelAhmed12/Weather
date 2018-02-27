@@ -73,6 +73,7 @@ public class WeatherFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         weatherFont = ResourcesCompat.getFont(getContext(), R.font.weather);
+        updateWeatherData(new CityPreference(getActivity()).getCity());
     }
 
     private void updateWeatherData(final String city) {
@@ -101,7 +102,7 @@ public class WeatherFragment extends Fragment {
     }
 
     private void showInputDialog(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 
         builder.setTitle("Change City");
 
